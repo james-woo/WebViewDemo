@@ -1,0 +1,32 @@
+<h1>Calculator</h1>
+
+<img src="https://s3.amazonaws.com/magoosh-company-site/wp-content/uploads/sites/13/2016/09/07120834/4MYkX.gif"/>
+
+<br>
+
+<div style="text-align: center;">
+    <input type="button" value="2 + 2" onClick="showMessage('is 4 minus 1 thats 3 quick maths')" />
+</div>
+
+<script type="text/javascript">
+    /* 7. Hook up Android.showToast with the onClick event */
+    function showMessage(message) {
+        if (navigator.userAgent.includes('Mobile')) {
+            Android.showToast(message);
+        } else {
+            alert(message);
+        }
+    }
+
+    /* 8. Hide the title and call Android.setTitle */
+    if (navigator.userAgent.includes('Mobile')) {
+        document.getElementsByTagName('h1')[0].style.display = 'none';
+        Android.setTitle(document.getElementsByTagName('h1')[0].textContent);
+    }
+</script>
+
+<style>
+    h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+    img { display: block; margin: auto; width: 100%; }
+    center { display: flex; align-items: center; justify-content: center; }
+</style>
